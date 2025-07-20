@@ -5,6 +5,11 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-mainBG: #010e1c;
+  --color-evenSectionBG: #011121;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
