@@ -22,6 +22,7 @@ const About = () => {
           scaleOnHover={1.05}
           showMobileWarning={false}
           displayOverlayContent={true}
+          disableAll = {true}
         />
       </div>
 
