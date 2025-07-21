@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="h-auto bg-mainBG text-slate-50">
       <NavBar />
-      <Header />
+      {/* <Header /> */}
       <About />
       <Skills />
       <Experience />
