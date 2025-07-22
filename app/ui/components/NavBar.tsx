@@ -34,7 +34,7 @@ function NavBar({}: Props) {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="sticky top-0 flex items-center justify-end"
+      className="sticky top-0 flex items-center justify-end bg-mainBG"
     >
       <div className="md:flex hidden gap-6 pr-4 items-center h-20">
         <DrawOutlineBtn outline="BOTTOM">

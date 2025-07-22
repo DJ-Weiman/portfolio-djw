@@ -1,8 +1,8 @@
-import About from "./ui/components/About";
-import Experience from "./ui/components/Experience";
-import Header from "./ui/components/Header";
+import About from "./ui/sections/About";
+import Experience from "./ui/sections/Experience";
+import Header from "./ui/sections/Header";
 import NavBar from "./ui/components/NavBar";
-import Skills from "./ui/components/Skills";
+import Skills from "./ui/sections/Skills";
 
 
 export default function Home() {

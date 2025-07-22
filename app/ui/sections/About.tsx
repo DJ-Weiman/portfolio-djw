@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 // import profile from '../../../public/profile.png'
-import TiltedCard from './bits/TiltedCard'
+import TiltedCard from '../components/bits/TiltedCard'
 
 
 const About = () => {
@@ -22,7 +22,6 @@ const About = () => {
           scaleOnHover={1.05}
           showMobileWarning={false}
           displayOverlayContent={true}
-          disableAll = {true}
         />
       </div>
 
