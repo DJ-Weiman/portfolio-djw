@@ -16,7 +16,7 @@ const Header = () => {
   }
 
   return (
-    <div className="py-8 px-10">
+    <div id='header' className="py-8 px-10">
         <div><Toaster position='top-center'/></div>
         <div>
           <h1 className="text-4xl font-bold text-slate-400"> 

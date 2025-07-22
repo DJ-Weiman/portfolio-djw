@@ -14,9 +14,8 @@ type Props = {};
 
 function NavBar({}: Props) {
   const { scrollY } = useScroll();
-  const {openState, setOpenState} = sideNavStateStore()
+  const { openState, setOpenState } = sideNavStateStore();
   const [hidden, setHidden] = useState(false);
-  const [showSideNav, setShowSideNav] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -25,6 +24,9 @@ function NavBar({}: Props) {
       else setHidden(false);
     }
   });
+
+  if (openState) document.body.style.overflow = "hidden";
+  else document.body.style.overflow = "unset";
 
   return (
     <motion.nav
@@ -38,16 +40,16 @@ function NavBar({}: Props) {
     >
       <div className="md:flex hidden gap-6 pr-4 items-center h-20">
         <DrawOutlineBtn outline="BOTTOM">
-          <Link href="#">About</Link>
+          <a href="#about">About</a>
         </DrawOutlineBtn>
         <DrawOutlineBtn outline="BOTTOM">
-          <Link href="#">Skills & Education</Link>
+          <a href="#skills">Skills & Education</a>
         </DrawOutlineBtn>
         <DrawOutlineBtn outline="BOTTOM">
-          <Link href="#">Work</Link>
+          <a href="#experience">Work</a>
         </DrawOutlineBtn>
         <DrawOutlineBtn outline="BOTTOM">
-          <Link href="#">Personal Projects</Link>
+          <a href="#">Personal Projects</a>
         </DrawOutlineBtn>
         <LinkBox href="#" linkText="Resume" />
       </div>
@@ -55,18 +57,15 @@ function NavBar({}: Props) {
       <div className="md:hidden flex">
         <span className="h-20"></span>
         <div className="fixed top-4 right-4 z-20 h-20">
-          <AnimatedHamburgerButton
-            onClick={(show) => {
-              setShowSideNav(show);
-              setOpenState(!openState)
-              if(show)
-                document.body.style.overflow = 'hidden'
-              else
-                document.body.style.overflow = 'unset'
+          <AnimatedHamburgerButton />
+        </div>
+        {openState && (
+          <StaggeredSideNav2
+            onNavItemClicked={() => {
+              setOpenState(false);
             }}
           />
-        </div>
-        {showSideNav && <StaggeredSideNav2 />}
+        )}
       </div>
     </motion.nav>
   );

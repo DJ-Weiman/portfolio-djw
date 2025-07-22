@@ -6,7 +6,7 @@ import TiltedCard from '../components/bits/TiltedCard'
 
 const About = () => {
   return (
-    <div className='bg-evenSectionBG px-10 pb-10'>
+    <div id='About' className='bg-evenSectionBG px-10 pb-10'>
       <h2 className="font-semibold text-3xl pt-3 pb-5">About</h2>
 
       <div className='flex justify-center mb-8'>

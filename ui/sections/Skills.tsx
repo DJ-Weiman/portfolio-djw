@@ -11,7 +11,7 @@ type Props = {}
 
 const Skills = (props: Props) => {
   return (
-    <div className='px-10 py-5'>
+    <div id='skills' className='px-10 py-5'>
         <h2 className="font-semibold pt-3 pb-5 text-3xl text-white">Skills & Education</h2>
         <p>I attened the <b>Faculty of information technology</b> at the <b>University of Moratuwa</b> where I graduated with a first class Honors.
         Currently I am following the <b>Full-Stack Developer Path </b> 

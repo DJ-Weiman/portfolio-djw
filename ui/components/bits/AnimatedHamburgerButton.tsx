@@ -3,13 +3,14 @@
 import React, { useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
 import { tr } from "framer-motion/client";
+import sideNavStateStore from "@/lib/SideNavStateStore";
 
 type props = {
-  onClick: (showSideNav: boolean) => void
 }
 
-const AnimatedHamburgerButton = ({onClick}: props) => {
-  const [active, setActive] = useState(false);
+const AnimatedHamburgerButton = ({}: props) => {
+  const {openState, setOpenState} = sideNavStateStore()
+
   return (
     <MotionConfig
       transition={{
@@ -19,10 +20,9 @@ const AnimatedHamburgerButton = ({onClick}: props) => {
     >
       <motion.button
         initial={false}
-        animate={active ? "open" : "closed"}
+        animate={openState ? "open" : "closed"}
         onClick={() => {
-          setActive((pv) => !pv)
-          onClick(!active)
+          setOpenState(!openState)
         }}
         className="relative h-20 w-20 rounded-full transition-colors"
       >
