@@ -8,7 +8,7 @@ import LinkBox from "./bits/ClipLinkBox";
 import AnimatedHamburgerButton from "./bits/AnimatedHamburgerButton";
 import StaggeredSideNav from "./bits/StaggeredSideNav";
 import StaggeredSideNav2 from "./bits/StaggeredSideNav2";
-import sideNavStateStore from "@/app/lib/SideNavStateStore";
+import sideNavStateStore from "@/lib/SideNavStateStore";
 
 type Props = {};
 

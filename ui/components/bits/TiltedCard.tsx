@@ -4,7 +4,7 @@ import type { SpringOptions } from "framer-motion";
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
-import sideNavStateStore from "@/app/lib/SideNavStateStore";
+import sideNavStateStore from "@/lib/SideNavStateStore";
 
 interface TiltedCardProps {
   imageSrc: React.ComponentProps<"img">["src"];
