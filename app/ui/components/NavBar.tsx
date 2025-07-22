@@ -8,11 +8,13 @@ import LinkBox from "./bits/ClipLinkBox";
 import AnimatedHamburgerButton from "./bits/AnimatedHamburgerButton";
 import StaggeredSideNav from "./bits/StaggeredSideNav";
 import StaggeredSideNav2 from "./bits/StaggeredSideNav2";
+import sideNavStateStore from "@/app/lib/SideNavStateStore";
 
 type Props = {};
 
 function NavBar({}: Props) {
   const { scrollY } = useScroll();
+  const {openState, setOpenState} = sideNavStateStore()
   const [hidden, setHidden] = useState(false);
   const [showSideNav, setShowSideNav] = useState(false);
 
@@ -56,6 +58,7 @@ function NavBar({}: Props) {
           <AnimatedHamburgerButton
             onClick={(show) => {
               setShowSideNav(show);
+              setOpenState(!openState)
               if(show)
                 document.body.style.overflow = 'hidden'
               else

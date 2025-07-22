@@ -4,6 +4,7 @@ import type { SpringOptions } from "framer-motion";
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
+import sideNavStateStore from "@/app/lib/SideNavStateStore";
 
 interface TiltedCardProps {
   imageSrc: React.ComponentProps<"img">["src"];
@@ -19,7 +20,6 @@ interface TiltedCardProps {
   showTooltip?: boolean;
   overlayContent?: React.ReactNode;
   displayOverlayContent?: boolean;
-  disableAll: boolean;
 }
 
 const springValues: SpringOptions = {
@@ -42,7 +42,6 @@ export default function TiltedCard({
   showTooltip = true,
   overlayContent = null,
   displayOverlayContent = false,
-  disableAll = false,
 }: TiltedCardProps) {
   const ref = useRef<HTMLElement>(null);
   const x = useMotionValue(0);
@@ -58,6 +57,7 @@ export default function TiltedCard({
   });
 
   const [lastY, setLastY] = useState(0);
+  const { openState } = sideNavStateStore();
 
   function handleMouse(e: React.MouseEvent<HTMLElement>) {
     if (!ref.current) return;
@@ -95,7 +95,7 @@ export default function TiltedCard({
 
   return (
     <div>
-      {disableAll ? (
+      {openState ? (
         <img
           src={imageSrc}
           style={{ width: imageWidth, height: imageHeight }}
