@@ -3,18 +3,18 @@
 import { create } from "zustand";
 
 type sideNavStoreState = {
-    openState: boolean
+    globalSideNavOpenState: boolean
 }
 
 type sideNavStoreActions = {
-    setOpenState: (state: boolean) => void;
+    setGlobalSideNavOpenState: (state: boolean) => void;
 }
 
 type SideNavStore = sideNavStoreState & sideNavStoreActions
 
 const sideNavStateStore = create<SideNavStore>((set) => ({
-    openState: false,
-    setOpenState: (state: boolean) => set({openState: state})
+    globalSideNavOpenState: false,
+    setGlobalSideNavOpenState: (state: boolean) => set({globalSideNavOpenState: state})
 }))
 
 export default sideNavStateStore

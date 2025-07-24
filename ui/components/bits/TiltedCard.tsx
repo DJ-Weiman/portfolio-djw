@@ -57,7 +57,7 @@ export default function TiltedCard({
   });
 
   const [lastY, setLastY] = useState(0);
-  const { openState } = sideNavStateStore();
+  const { globalSideNavOpenState } = sideNavStateStore();
 
   function handleMouse(e: React.MouseEvent<HTMLElement>) {
     if (!ref.current) return;
@@ -95,7 +95,7 @@ export default function TiltedCard({
 
   return (
     <div>
-      {openState ? (
+      {globalSideNavOpenState ? (
         <img
           src={imageSrc}
           style={{ width: imageWidth, height: imageHeight }}

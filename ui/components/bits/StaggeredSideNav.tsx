@@ -1,95 +1,84 @@
-"use client";
+'use client'
 
+import React, { useEffect, useState } from "react";
+import DrawOutlineBtn from "./DrawOutlineBtn";
+import LinkBox from "./ClipLinkBox"
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, useState } from "react";
-import { IconType } from "react-icons";
 
-const StaggeredSideNav = (openState: { openState: boolean }) => {
+type Props = {
+  onAnimationCompleted: () => void;
+  onNavItemClicked: () => void;
+  startSideNavOpenAnimation: boolean;
+};
+
+type animationStates = "open" | "closed";
+
+function StaggeredSideNav2({
+  onNavItemClicked,
+  startSideNavOpenAnimation,
+  onAnimationCompleted,
+}: Props) {
+  function handleContainerCloseAnimation(definition: animationStates) {
+    if (definition === "closed") {
+      onAnimationCompleted()
+    }
+  }
+
   return (
-    <aside className="min-h-screen w-screen bg-blue-200">
-      {openState && (
-        <div className="p-8 flex items-center justify-center w-xl bg-red-50">
-          <motion.div
-            animate={openState ? "open" : "closed"}
-            className=""
-          >
+    <div className="fixed inset-0 min-h-screen w-screen">
+      <div
+        className="bg-black opacity-75 fixed inset-0"
+        style={{ backdropFilter: "blur(5px)" }}
+      ></div>
 
-            <motion.ul
-              initial={wrapperVariants.closed}
-              variants={wrapperVariants}
-              style={{ originY: "top", translateX: "-50%" }}
-              className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute overflow-hidden"
-            >
-              <Option text="Edit" />
-              <Option text="Duplicate" />
-              <Option text="Share" />
-              <Option text="Remove" />
-            </motion.ul>
-          </motion.div>
+      <motion.div
+        variants={ContainerVariants}
+        initial="closed"
+        animate={startSideNavOpenAnimation ? "open" : "closed"}
+        onAnimationComplete={handleContainerCloseAnimation}
+        className="bg-mainBG opacity-100 min-h-screen fixed top-0 right-0"
+      >
+        <div className="md:hidden flex flex-col gap-6 mt-25 px-4 items-center">
+          <DrawOutlineBtn outline="BOTTOM">
+            <a href="#about" onClick={onNavItemClicked}>
+              About
+            </a>
+          </DrawOutlineBtn>
+          <DrawOutlineBtn outline="BOTTOM">
+            <a href="#skills" onClick={onNavItemClicked}>
+              Skills & Education
+            </a>
+          </DrawOutlineBtn>
+          <DrawOutlineBtn outline="BOTTOM">
+            <a href="#experience" onClick={onNavItemClicked}>
+              Work
+            </a>
+          </DrawOutlineBtn>
+          <DrawOutlineBtn outline="BOTTOM">
+            <a href="#" onClick={onNavItemClicked}>
+              Personal Projects
+            </a>
+          </DrawOutlineBtn>
+          <div className="mt-2">
+            <LinkBox href="#" linkText="Resume" />
+          </div>
         </div>
-      )}
-    </aside>
+      </motion.div>
+    </div>
   );
-};
+}
 
-const Option = ({
-  text,
-}: //   Icon,
-//   setOpen,
-{
-  text: string;
-  //   Icon: IconType;
-  //   setOpen: Dispatch<SetStateAction<boolean>>;
-}) => {
-  return (
-    <motion.li
-      variants={itemVariants}
-      //   onClick={() => setOpen(false)}
-      className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-indigo-500 transition-colors cursor-pointer"
-    >
-      <motion.span variants={actionIconVariants}>{/* <Icon /> */}</motion.span>
-      <span>{text}</span>
-    </motion.li>
-  );
-};
-
-export default StaggeredSideNav;
-
-const wrapperVariants = {
+const ContainerVariants = {
   open: {
-    scaleY: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-  closed: {
-    scaleY: 0,
-    transition: {
-      when: "afterChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  open: {
+    x: 0,
     opacity: 1,
-    y: 0,
-    transition: {
-      when: "beforeChildren",
-    },
+    transition: { duation: 0.75 },
   },
   closed: {
+    x: 100,
     opacity: 0,
-    y: -15,
-    transition: {
-      when: "afterChildren",
-    },
+    transition: { duation: 0.75 },
   },
 };
 
-const actionIconVariants = {
-  open: { scale: 1, y: 0 },
-  closed: { scale: 0, y: -7 },
-};
+export default StaggeredSideNav2;

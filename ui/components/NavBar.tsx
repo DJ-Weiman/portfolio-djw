@@ -6,16 +6,18 @@ import DrawOutlineBtn from "./bits/DrawOutlineBtn";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import LinkBox from "./bits/ClipLinkBox";
 import AnimatedHamburgerButton from "./bits/AnimatedHamburgerButton";
-import StaggeredSideNav from "./bits/StaggeredSideNav";
-import StaggeredSideNav2 from "./bits/StaggeredSideNav2";
+import StaggeredSideNav2 from "./bits/StaggeredSideNav";
 import sideNavStateStore from "@/lib/SideNavStateStore";
 
 type Props = {};
 
 function NavBar({}: Props) {
   const { scrollY } = useScroll();
-  const { openState, setOpenState } = sideNavStateStore();
+  const { globalSideNavOpenState, setGlobalSideNavOpenState } =
+    sideNavStateStore();
+
   const [hidden, setHidden] = useState(false);
+  const [localSideNavOpenState, setLocalSideNavOpenState] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -25,7 +27,7 @@ function NavBar({}: Props) {
     }
   });
 
-  if (openState) document.body.style.overflow = "hidden";
+  if (globalSideNavOpenState) document.body.style.overflow = "hidden";
   else document.body.style.overflow = "unset";
 
   return (
@@ -57,13 +59,27 @@ function NavBar({}: Props) {
       <div className="md:hidden flex">
         <span className="h-20"></span>
         <div className="fixed top-4 right-4 z-20 h-20">
-          <AnimatedHamburgerButton />
+          <AnimatedHamburgerButton
+            onBtnClicked={() => {
+              setLocalSideNavOpenState((prev) => {
+                if (!prev) setGlobalSideNavOpenState(true);
+                return !prev;
+              });
+            }}
+            openState={localSideNavOpenState}
+          />
         </div>
-        {openState && (
+        {globalSideNavOpenState && (
           <StaggeredSideNav2
             onNavItemClicked={() => {
-              setOpenState(false);
+              console.log("Inside Nav Item Cliekced")
+              setLocalSideNavOpenState(false);
             }}
+            onAnimationCompleted={() => {
+              console.log("Inside animation Completed")
+              setGlobalSideNavOpenState(false);
+            }}
+            startSideNavOpenAnimation={localSideNavOpenState}
           />
         )}
       </div>
