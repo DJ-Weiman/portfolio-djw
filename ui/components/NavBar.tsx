@@ -53,7 +53,7 @@ function NavBar({}: Props) {
         <DrawOutlineBtn outline="BOTTOM">
           <a href="#">Personal Projects</a>
         </DrawOutlineBtn>
-        <LinkBox href="#" linkText="Resume" />
+        <LinkBox href="https://drive.google.com/file/d/16uM8zfZI3iR7dJ1bFon2ROZy1nV7DHPs/view?usp=sharing" linkText="Resume" />
       </div>
 
       <div className="md:hidden flex">

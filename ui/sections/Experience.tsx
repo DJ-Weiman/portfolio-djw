@@ -25,8 +25,8 @@ const Experience = (props: Props) => {
           className="rounded-xl bg-slate-600 p-4 flex flex-col gap-4 max-w-xl self-start"
         >
           <div className="flex flex-col gap-1">
-            <h2 className="text-xl font-bold">Software Engineer</h2>
-            <h3 className="text-md">ABC</h3>
+            <h2 className="text-xl font-bold text-slate-100">Software Engineer</h2>
+            <h3 className="text-md text-slate-200">4 Axis Solutions Pvt. Ltd.</h3>
             <p className="text-sm font-light">July 2023 - Present</p>
           </div>
           <ul className="list-disc pl-4">
@@ -57,7 +57,7 @@ const Experience = (props: Props) => {
             <h2 className="text-xl font-bold">
               Trainee Software Engineer (Internship)
             </h2>
-            <h3 className="text-md">ABC</h3>
+            <h3 className="text-md">4 Axis Solutions Pvt. Ltd.</h3>
             <p className="text-sm font-light">July 2023 - Present</p>
           </div>
           <ul className="list-disc pl-4">

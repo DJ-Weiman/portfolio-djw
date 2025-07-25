@@ -100,6 +100,7 @@ export default function TiltedCard({
           src={imageSrc}
           style={{ width: imageWidth, height: imageHeight }}
           alt="Dion Weiman"
+          className="rounded-md"
         />
       ) : (
         <figure

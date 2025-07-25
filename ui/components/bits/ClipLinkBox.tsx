@@ -85,6 +85,7 @@ const LinkBox = ({ href, linkText }: props) => {
   return (
     <a
       href={href}
+      target="_blank"
       onMouseEnter={(e) => {
         handleMouseEnter(e);
       }}

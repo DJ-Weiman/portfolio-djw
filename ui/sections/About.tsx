@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-// import profile from '../../../public/profile.png'
+import profile from '../../public/profile.png'
 import TiltedCard from '../components/bits/TiltedCard'
 
 
@@ -11,7 +11,7 @@ const About = () => {
 
       <div className='flex justify-center mb-8'>
         <TiltedCard
-          imageSrc={'profile.src'}
+          imageSrc={profile.src}
           altText="Dion Weiman profile Image"
           captionText="Your next team member"
           containerHeight="200px"
