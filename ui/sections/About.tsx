@@ -18,7 +18,7 @@ const About = () => {
           containerWidth="200px"
           imageHeight="200px"
           imageWidth="200px"
-          rotateAmplitude={30}
+          rotateAmplitude={20}
           scaleOnHover={1.05}
           showMobileWarning={false}
           displayOverlayContent={true}
@@ -26,7 +26,7 @@ const About = () => {
       </div>
 
       <div className='grid gap-4 grid-cols-2 '>
-        <p>A Developer with 2+ years of experience as an Android Developer and currently passionate about breaking into the world of fullstack Development</p>
+        <p>A Developer with 2+ years of experience as an Android Developer, with self taught expertise in Fullstack Development focusing on React and SpringBoot</p>
         <p>Frameworks intrigue me because on the surface they abstract quite a lot and make the life of a developer easy,
           but they also provide an opportunity to dive deeper and understand why each part functions as it does.</p>
         <p>I enjoy learning something new, especially when it comes to programming because its extremly satisfying looking

@@ -3,6 +3,7 @@ import Experience from "../ui/sections/Experience";
 import Header from "../ui/sections/Header";
 import NavBar from "../ui/components/NavBar";
 import Skills from "../ui/sections/Skills";
+import Projects from "@/ui/sections/Projects";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <About />
         <Skills />
         <Experience />
+        <Projects />
       </div>
     </main>
   );
