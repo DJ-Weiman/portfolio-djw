@@ -4,6 +4,7 @@ import Header from "../ui/sections/Header";
 import NavBar from "../ui/components/NavBar";
 import Skills from "../ui/sections/Skills";
 import Projects from "@/ui/sections/Projects";
+import Footer from "@/ui/sections/Footer";
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
+        <Footer />
       </div>
     </main>
   );
