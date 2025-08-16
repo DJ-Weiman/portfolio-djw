@@ -9,7 +9,7 @@ type scrollDirTypes = 'LEFT' | 'RIGHT'
 const Experience = (props: Props) => {
   const scrollInVariant = {
     visible: { x: 0, opacity: 1, transition: { duration: 0.75 } },
-    hidden: (direction: scrollDirTypes) => ({x: direction === 'LEFT' ? -50 : 50, opacity: 0}),
+    hidden: (direction: scrollDirTypes) => ({ x: direction === 'LEFT' ? -50 : 50, opacity: 0 }),
   };
 
   return (
@@ -30,19 +30,13 @@ const Experience = (props: Props) => {
             <p className="text-sm font-light">July 2023 - Present</p>
           </div>
           <ul className="list-disc pl-4">
-            <li>
-              Working on migrating the legacy Java code to Kotlin while focusing
-              on best practices and clean scalable architcture
-            </li>
-            <li>
-              Developed UI for the company's flagship applications: SketchPro
-              and DrawingDesk
-            </li>
-            <li>
-              Worked on integrating app functionality with the inhouse built
-              engine
-            </li>
-            <li>Integrated cloud services with Android applications</li>
+            <li>Developed Android applications using Kotlin and Java.</li>
+            <li>Migrated legacy Java code to Kotlin, following modern Android development practices, which improved app stability and resulted in a cleaner code structure.</li>
+            <li>Developed user interfaces (UI) based on provided designs.</li>
+            <li>Implemented features to facilitate communication between the native in-house built engine and the user-facing application.</li>
+            <li>Implemented features to retrieve data from cloud storage and present it through the app.</li>
+            <li>Worked on testing and resolving bugs raised through the quality assurance (QA) process.</li>
+            <li>Utilized Agile methodologies to develop required features.</li>
           </ul>
         </motion.div>
 
@@ -61,13 +55,10 @@ const Experience = (props: Props) => {
             <p className="text-sm font-light">July 2023 - Present</p>
           </div>
           <ul className="list-disc pl-4">
-            <li>
-              Developed ML related features for Drawing Desk (Mainly focusing on
-              OpenCV)
-            </li>
-            <li>Integrated new features with the existing application.</li>
-            <li>Gained exposure to working according the Agile Methodology</li>
-            <li>Developed a sense of self learning and ownership for tasks</li>
+            <li>Incorporated ML based features (Focus on OpenCV) into Drawing Desk.</li>
+            <li>Implemented UI based on provided designs.</li>
+            <li>Collaborated within the Android Team and other teams to develop required features.</li>
+            <li>Pushed myself to learn on the job and adapt to the different tasks given.</li>
           </ul>
         </motion.div>
       </div>

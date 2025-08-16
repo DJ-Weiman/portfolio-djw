@@ -25,9 +25,9 @@ const Header = () => {
           <h2 className="text-xl pt-3 pb-5 text-slate-100">Fullstack & Android Developer</h2>
           <p className="font-light text-white">Software Engineer with a passion for learning and devising innovative solutions through tech</p>
           <div className="flex mt-6 gap-4">
-            <FaInstagram className=" w-6 h-6" />
-            <FaGithub className=" w-6 h-6" />
-            <FaLinkedin className=" w-6 h-6" />
+            <a href="https://github.com/DJ-Weiman" target='_blank'><FaGithub className=" w-6 h-6" /></a>
+            <a href="https://www.linkedin.com/in/dion-weiman/" target='_blank'><FaLinkedin className=" w-6 h-6" /></a>
+            <a href='https://www.instagram.com/dion_weiman/' target='_blank'><FaInstagram className=" w-6 h-6" /></a>
           </div>
         </div>
         {/* <Image className="rounded-full h-40 w-40 border-white border-2" width="200" height="80" src="/profile.png" alt="profile picture of me: Dion Weiman" /> */}
