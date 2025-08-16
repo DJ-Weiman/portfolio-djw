@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Image from "next/image";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
 

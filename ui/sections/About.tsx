@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+
 import React from 'react'
 import profile from '../../public/profile.png'
 import TiltedCard from '../components/bits/TiltedCard'

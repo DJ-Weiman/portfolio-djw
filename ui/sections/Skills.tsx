@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaAndroid, FaHtml5, FaJava, FaJs, FaReact } from "react-icons/fa";
+import { FaHtml5, FaJava, FaJs, FaReact } from "react-icons/fa";
 import { RiNextjsLine } from "react-icons/ri";
 import { SiKotlin } from "react-icons/si";
 import { IoLogoCss3 } from "react-icons/io5";

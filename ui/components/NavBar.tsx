@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import DrawOutlineBtn from "./bits/DrawOutlineBtn";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import LinkBox from "./bits/ClipLinkBox";
@@ -27,8 +26,13 @@ function NavBar({}: Props) {
     }
   });
 
-  if (globalSideNavOpenState) document.body.style.overflow = "hidden";
-  else document.body.style.overflow = "unset";
+  // if (globalSideNavOpenState) document.body.style.overflow = "hidden";
+  // else document.body.style.overflow = "unset";
+
+  useEffect(() => {
+    if (globalSideNavOpenState) document.body.style.overflow = "hidden"; 
+    else document.body.style.overflow = "unset";
+  }, [globalSideNavOpenState]);
 
   return (
     <motion.nav
