@@ -27,3 +27,5 @@ export const projectsData = [
     githubUrl: "https://github.com/DJ-Weiman/portfolio-djw.git"
   },
 ];
+
+export const CVLink = "https://drive.google.com/file/d/1fr1hUp71jZhrWr5Cx-qqudTO1OKZ2KG_/view?usp=sharing"

@@ -7,10 +7,11 @@ import LinkBox from "./bits/ClipLinkBox";
 import AnimatedHamburgerButton from "./bits/AnimatedHamburgerButton";
 import StaggeredSideNav2 from "./bits/StaggeredSideNav";
 import sideNavStateStore from "@/lib/SideNavStateStore";
+import { CVLink } from "@/lib/data";
 
 type Props = {};
 
-function NavBar({}: Props) {
+function NavBar({ }: Props) {
   const { scrollY } = useScroll();
   const { globalSideNavOpenState, setGlobalSideNavOpenState } =
     sideNavStateStore();
@@ -26,11 +27,8 @@ function NavBar({}: Props) {
     }
   });
 
-  // if (globalSideNavOpenState) document.body.style.overflow = "hidden";
-  // else document.body.style.overflow = "unset";
-
   useEffect(() => {
-    if (globalSideNavOpenState) document.body.style.overflow = "hidden"; 
+    if (globalSideNavOpenState) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "unset";
   }, [globalSideNavOpenState]);
 
@@ -57,7 +55,7 @@ function NavBar({}: Props) {
         <DrawOutlineBtn outline="BOTTOM">
           <a href="#">Personal Projects</a>
         </DrawOutlineBtn>
-        <LinkBox href="https://drive.google.com/file/d/16uM8zfZI3iR7dJ1bFon2ROZy1nV7DHPs/view?usp=sharing" linkText="Resume" />
+        <LinkBox href={CVLink} linkText="Resume" />
       </div>
 
       <div className="md:hidden flex">

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import DrawOutlineBtn from "./DrawOutlineBtn";
 import LinkBox from "./ClipLinkBox"
 import { motion } from "framer-motion";
+import { CVLink } from "@/lib/data";
 
 type Props = {
   onAnimationCompleted: () => void;
@@ -60,7 +61,7 @@ function StaggeredSideNav2({
             </a>
           </DrawOutlineBtn>
           <div className="mt-2">
-            <LinkBox href="https://drive.google.com/file/d/16uM8zfZI3iR7dJ1bFon2ROZy1nV7DHPs/view?usp=sharing" linkText="Resume" />
+            <LinkBox href={CVLink} linkText="Resume" />
           </div>
         </div>
       </motion.div>
