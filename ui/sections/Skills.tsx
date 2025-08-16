@@ -12,14 +12,14 @@ type Props = {}
 
 const Skills = (props: Props) => {
   return (
-    <div id='skills' className='px-10 py-5'>
+    <div className='px-10 py-5'>
         <h2 className="font-semibold pt-3 pb-5 text-3xl text-white">Skills & Education</h2>
         <p>I attened the <b>Faculty of information technology</b> at the <b>University of Moratuwa</b> where I graduated with a first class Honors.
         Currently I am following the <b>Full-Stack Developer Path </b> 
         on <b><a href='https://scrimba.com/frontend-path-c0j' target='_blank'>Scrimba</a></b>, In addtion to a host of other online resources
         </p>
         <p className='mt-6'>Here are some of the technologies I have been working with recently:</p>
-        <div className="flex mt-10 gap-6 justify-center">
+        <div className="flex flex-wrap mt-10 gap-6 justify-center">
             <FaJava className='w-10 h-10'/>   
             <SiKotlin  className='w-10 h-10'/>
             <FaJs  className='w-10 h-10'/>
